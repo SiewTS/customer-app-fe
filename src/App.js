@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { ChakraProvider } from "@chakra-ui/react"
+import CustomersPage from "./pages/customersPage/customersPage"
+import RegisterPage from './pages/customersPage/registerPage'
+import "./App.css"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import EditPage from "./pages/customersPage/editPage"
+import ViewPage from "./pages/customersPage/viewPage"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <CustomersPage />,
+    },
+    {
+        path: "/register",
+        element: <RegisterPage />,
+    },
+    {
+        path: "/customer/:id/view",
+        element: <ViewPage />,
+    },
+    {
+        path: "/customer/:id/edit",
+        element: <EditPage />,
+    },
+])
+
+const App = () => {
+    return (
+        <ChakraProvider>
+            <RouterProvider router={router} />
+        </ChakraProvider>
+    )
 }
 
-export default App;
+export default App

@@ -1,0 +1,18 @@
+.layout-container{
+    width: 100%;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+}
+.child-container{
+    width: 90%;
+    margin: 20px auto;
+}
+.content{
+    width: 90%;
+    margin: auto;
+}

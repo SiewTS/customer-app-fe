@@ -1,0 +1,11 @@
+.pagination-container{
+    margin: 40px 0;
+    padding: 0 5px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.pagination-input{
+    width: 5%;
+    max-width: 50px;
+}
